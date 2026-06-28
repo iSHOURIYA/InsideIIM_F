@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-nb-cream text-nb-black dark:bg-surface-950 dark:text-surface-100;
+  }
+
+  ::selection {
+    @apply bg-primary-500/30;
+  }
+
+  * {
+    @apply border-nb-border dark:border-surface-600;
+  }
+}
+
+@layer components {
+  .nb-card {
+    @apply border-2 bg-white dark:bg-surface-800;
+    box-shadow: 4px 4px 0px 0px #0f172a;
+  }
+
+  .dark .nb-card {
+    box-shadow: 4px 4px 0px 0px #334155;
+  }
+
+  .nb-card-hover {
+    @apply nb-card transition-all duration-200;
+  }
+
+  .nb-card-hover:hover {
+    box-shadow: 6px 6px 0px 0px #0f172a;
+    transform: translate(-2px, -2px);
+  }
+
+  .dark .nb-card-hover:hover {
+    box-shadow: 6px 6px 0px 0px #334155;
+  }
+
+  .nb-input {
+    @apply border-2 bg-white px-4 py-3 text-nb-black outline-none transition-all duration-200
+           focus:translate-x-0.5 focus:translate-y-0.5
+           dark:bg-surface-800 dark:text-surface-100;
+    box-shadow: 4px 4px 0px 0px #0f172a;
+  }
+
+  .nb-input:focus {
+    box-shadow: 2px 2px 0px 0px #0f172a;
+  }
+
+  .dark .nb-input {
+    box-shadow: 4px 4px 0px 0px #334155;
+  }
+
+  .dark .nb-input:focus {
+    box-shadow: 2px 2px 0px 0px #334155;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent;
+  }
+}
